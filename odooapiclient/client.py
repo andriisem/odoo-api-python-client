@@ -1,4 +1,4 @@
-import auth
+from . import auth
 
 
 class Client(object):
