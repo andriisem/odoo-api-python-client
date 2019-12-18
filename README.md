@@ -12,3 +12,13 @@ Install this library in a [virtualenv](https://virtualenv.pypa.io/en/latest/) us
 ```
 pip install odooapiclient
 ```
+
+### Windows
+
+```
+<your-env>\Scripts\pip.exe install odooapiclient
+```
+
+## Supported Python Versions
+
+Python 3.4, 3.5, 3.6 and 3.7
