@@ -20,7 +20,7 @@ class Client(object):
 
     def authenticate(self, login, pwd):
         self._login, self._password = login, pwd
-        service = auth.Connection(self._url, 'common')
+        service = service_tools.Connection(self._url, 'common')
         self._uid = service.authenticate(self._db, login, pwd, {})
         return self._uid
 
@@ -30,6 +30,6 @@ class Client(object):
         if not kwargs:
             kwargs ={}
         kwargs.update({'context': context})
-        service = auth.Connection(self._url, 'object')
+        service = service_tools.Connection(self._url, 'object')
         response = service.models(self._db, self._uid, self._password, model, 'search', domain or [], **kwargs)
         return response
