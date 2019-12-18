@@ -33,3 +33,11 @@ class Client(object):
         service = service_tools.Connection(self._url, 'object')
         response = service.models(self._db, self._uid, self._password, model, 'search', domain or [], **kwargs)
         return response
+        
+
+    def create(self, model, values, context=None):
+        if not context:
+            context = {}
+        service = service_tools.Connection(self._url, 'object')
+        response = service.models(self._db, self._uid, self._password, model, 'create', values, context=context)
+        return response
