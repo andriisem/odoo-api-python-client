@@ -2,7 +2,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 setup(name='odooapiclient',
-      version='0.3',
+      version='0.4',
       description='Odoo API Client',
       classifiers=[
           "Programming Language :: Python",
