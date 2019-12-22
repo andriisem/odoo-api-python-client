@@ -33,6 +33,19 @@ class Client(object):
         service = service_tools.Connection(self._url, 'object')
         response = service.models(self._db, self._uid, self._password, model, 'search', domain or [], **kwargs)
         return response
+
+    def search_read(self, model, domain=False, fields=False, context=None, **kwargs):
+        if not context:
+            context = {}
+        if not kwargs:
+            kwargs ={}
+        kwargs.update({'context': context})
+
+        service = service_tools.Connection(self._url, 'object')
+        response = service.Model(self._db, self._uid, self._password, model, 
+                                        'search_read', domain or [],
+                                        fields=fields, **kwargs)
+        return response
         
 
     def create(self, model, values, context=None):
